@@ -1,0 +1,7 @@
+{
+    name: Client1,
+    redurect_uri: http://localhost/callback,
+    userId: A1A2A3A4A5B1B2B3B4C1C2C3C4,
+    ClientId: 3,
+    clientSecret: xKZrUptLpCGghozpa5495AIcujGILefzgbo3xhG1
+}

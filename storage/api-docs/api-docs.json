@@ -1,0 +1,240 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Integration Swagger in Laravel with Passport Auth Documentation",
+        "description": "Implementation of API REST in Laravel",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000",
+            "description": "Localhost"
+        }
+    ],
+    "paths": {
+        "/api/auth/signup": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Sign up a user",
+                "description": "",
+                "operationId": "signup",
+                "responses": {
+                    "200": {
+                        "description": "The new notification"
+                    },
+                    "400": {
+                        "description": "Server error"
+                    },
+                    "401": {
+                        "description": "UnAuthorize request"
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login a user",
+                "description": "",
+                "operationId": "login",
+                "responses": {
+                    "200": {
+                        "description": "The new notification"
+                    },
+                    "400": {
+                        "description": "Server error"
+                    },
+                    "401": {
+                        "description": "UnAuthorize request"
+                    }
+                }
+            }
+        },
+        "/api/auth/logout": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Logout a user",
+                "description": "",
+                "operationId": "logout",
+                "responses": {
+                    "200": {
+                        "description": "Operation success"
+                    },
+                    "400": {
+                        "description": "Server error"
+                    },
+                    "401": {
+                        "description": "UnAuthorize request"
+                    }
+                }
+            }
+        },
+        "/api/auth/user": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Get user´s information",
+                "description": "",
+                "operationId": "user",
+                "responses": {
+                    "200": {
+                        "description": "Operation success"
+                    },
+                    "400": {
+                        "description": "Server error"
+                    },
+                    "401": {
+                        "description": "UnAuthorize request"
+                    }
+                }
+            }
+        },
+        "/api/user/notifications": {
+            "get": {
+                "tags": [
+                    "Notifications"
+                ],
+                "summary": "Get user's notifications",
+                "description": "",
+                "operationId": "getUserNotifications",
+                "responses": {
+                    "200": {
+                        "description": "User notifications"
+                    },
+                    "400": {
+                        "description": "Yelp error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Notifications"
+                ],
+                "summary": "Create a notifications",
+                "description": "",
+                "operationId": "createUserNotifications",
+                "responses": {
+                    "200": {
+                        "description": "The new notification"
+                    },
+                    "400": {
+                        "description": "Yelp error"
+                    }
+                }
+            }
+        },
+        "/api/user/notifications/{notificationId}": {
+            "post": {
+                "tags": [
+                    "Notifications"
+                ],
+                "summary": "Update a notifications",
+                "description": "",
+                "operationId": "updateUserNotifications",
+                "parameters": [
+                    {
+                        "name": "notificationId",
+                        "in": "path",
+                        "description": "A notification Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The new notification"
+                    },
+                    "400": {
+                        "description": "Yelp error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Notifications"
+                ],
+                "summary": "Delete a notifications",
+                "description": "",
+                "operationId": "deleteUserNotifications",
+                "parameters": [
+                    {
+                        "name": "notificationId",
+                        "in": "path",
+                        "description": "A notification Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operation success"
+                    },
+                    "400": {
+                        "description": "Yelp error"
+                    }
+                }
+            }
+        },
+        "/api/yelp/search/{queryString}/location/{location}": {
+            "get": {
+                "tags": [
+                    "Yelp"
+                ],
+                "summary": "Bussiness search in Yelp API",
+                "description": "",
+                "operationId": "searchYelp",
+                "parameters": [
+                    {
+                        "name": "queryString",
+                        "in": "path",
+                        "description": "Any word to search",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "location",
+                        "in": "path",
+                        "description": "Any location to search",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Yelp error"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

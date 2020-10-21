@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "d6fd0c06-0ef7-43cc-9f89-0c342f9f94ad",
+		"name": "Laravel Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHTTPRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Smith\",\r\n    \"email\": \"john@gentoo.org\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/api/auth/signup",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/api/login",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGU5YmU1MDhhY2JiZTM3Y2QzYmI0YzNkYWQ1NWU0MDg4ZDc5YzA2OTgxMzIzMDAwOGUwNGYwYmMzNDRkOWVmMzc2ZGUzODg0NGFjMTY1ZTgiLCJpYXQiOjE2MDI4NzUxOTUsIm5iZiI6MTYwMjg3NTE5NSwiZXhwIjoxNjE4NTk5OTk1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NJqE9vNcozMPjizNlErnbkVUWuk-gCPcJwRFFF895qBUllTD51QnzWOV0abe1ChwYhY-0lrtS2lCoa3wDrO1pSNsnzFGTQ0sbquY8wgsG8Pus68MWw8ULDL9m1gl3tx9CPTIwHB6qhyLXEvuBcolzjtpg7Be22boHO9gM0Kd7Xw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/api/auth/logout",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserInfo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWQzYzU5ZDQxMDU3MDM3ZmEzNjYzZmEwZmM4YTJkYmQxZDY4NWM4MDJiMzkyZDI1ODJiYTY2MWI1NmUxNDRmNTAyMzhjOTc3ZmJmYjA1OWQiLCJpYXQiOjE2MDI4NzU0NjEsIm5iZiI6MTYwMjg3NTQ2MSwiZXhwIjoxNjE4NjAwMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.N2UwGFzFsWJOK-WzQkuNGSxBchXR22zfwkQL-QKgz1J47CfyGfw8r6bI24bzNISMdBXIMATwIf8XPqoUCsAlmwqivMxANCckuh55CDkCeiRHZhCC5uBAPtHn-Maxfce6j-JBrq8aHxqYwHfPR2oYE2SFdcEjKz6BXOnTGPs0EHY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}/api/auth/user",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Get all User Notifications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzhkOGQyMzA2OWEyZTYzZGNjMTM4M2VkZDlmNzJjNzJmMmY5MTBlYWIyMjZlNjQ2MzU4NDA0YjhhZjJhZmVmOWQ0MzZkNWQ2OTQ0ZjQwNjIiLCJpYXQiOjE2MDI4ODgyNzUsIm5iZiI6MTYwMjg4ODI3NSwiZXhwIjoxNjE4NjEzMDc0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.FYP5A_c-1uhivKUlvpD_U9dJeygMG_dWD14mAWbJTfj6wc48JRavonYLFoFAT1OaGejjgV_3fYTUPWgWdgLuM56rx9W66z8it6PhtcvMCmuB2XPef3eCbDWoMz1Evp8mPT8C1L78Qw3ccGXrtJzbVo_7c2fJZ4jzX-1ClhJJx2A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHTTPRequest",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/api/user/1/notifications",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"1",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWQzYzU5ZDQxMDU3MDM3ZmEzNjYzZmEwZmM4YTJkYmQxZDY4NWM4MDJiMzkyZDI1ODJiYTY2MWI1NmUxNDRmNTAyMzhjOTc3ZmJmYjA1OWQiLCJpYXQiOjE2MDI4NzU0NjEsIm5iZiI6MTYwMjg3NTQ2MSwiZXhwIjoxNjE4NjAwMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.N2UwGFzFsWJOK-WzQkuNGSxBchXR22zfwkQL-QKgz1J47CfyGfw8r6bI24bzNISMdBXIMATwIf8XPqoUCsAlmwqivMxANCckuh55CDkCeiRHZhCC5uBAPtHn-Maxfce6j-JBrq8aHxqYwHfPR2oYE2SFdcEjKz6BXOnTGPs0EHY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHTTPRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"A new one Notification Title\",\r\n    \"description\": \"Notification description\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/api/user/notifications",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWQzYzU5ZDQxMDU3MDM3ZmEzNjYzZmEwZmM4YTJkYmQxZDY4NWM4MDJiMzkyZDI1ODJiYTY2MWI1NmUxNDRmNTAyMzhjOTc3ZmJmYjA1OWQiLCJpYXQiOjE2MDI4NzU0NjEsIm5iZiI6MTYwMjg3NTQ2MSwiZXhwIjoxNjE4NjAwMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.N2UwGFzFsWJOK-WzQkuNGSxBchXR22zfwkQL-QKgz1J47CfyGfw8r6bI24bzNISMdBXIMATwIf8XPqoUCsAlmwqivMxANCckuh55CDkCeiRHZhCC5uBAPtHn-Maxfce6j-JBrq8aHxqYwHfPR2oYE2SFdcEjKz6BXOnTGPs0EHY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHTTPRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"A Updated Notification Title\",\r\n    \"description\": \"A updated Notification description\"\r\n}"
+						},
+						"url": {
+							"raw": "{{path}}/api/user/notifications/5",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"notifications",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWQzYzU5ZDQxMDU3MDM3ZmEzNjYzZmEwZmM4YTJkYmQxZDY4NWM4MDJiMzkyZDI1ODJiYTY2MWI1NmUxNDRmNTAyMzhjOTc3ZmJmYjA1OWQiLCJpYXQiOjE2MDI4NzU0NjEsIm5iZiI6MTYwMjg3NTQ2MSwiZXhwIjoxNjE4NjAwMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.N2UwGFzFsWJOK-WzQkuNGSxBchXR22zfwkQL-QKgz1J47CfyGfw8r6bI24bzNISMdBXIMATwIf8XPqoUCsAlmwqivMxANCckuh55CDkCeiRHZhCC5uBAPtHn-Maxfce6j-JBrq8aHxqYwHfPR2oYE2SFdcEjKz6BXOnTGPs0EHY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHTTPRequest",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/api/user/1/notifications/3",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"1",
+								"notifications",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Yelp",
+			"item": [
+				{
+					"name": "BussinessSearch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzhkOGQyMzA2OWEyZTYzZGNjMTM4M2VkZDlmNzJjNzJmMmY5MTBlYWIyMjZlNjQ2MzU4NDA0YjhhZjJhZmVmOWQ0MzZkNWQ2OTQ0ZjQwNjIiLCJpYXQiOjE2MDI4ODgyNzUsIm5iZiI6MTYwMjg4ODI3NSwiZXhwIjoxNjE4NjEzMDc0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.FYP5A_c-1uhivKUlvpD_U9dJeygMG_dWD14mAWbJTfj6wc48JRavonYLFoFAT1OaGejjgV_3fYTUPWgWdgLuM56rx9W66z8it6PhtcvMCmuB2XPef3eCbDWoMz1Evp8mPT8C1L78Qw3ccGXrtJzbVo_7c2fJZ4jzX-1ClhJJx2A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHTTPRequest",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{path}}/api/yelp/search/bar",
+							"host": [
+								"{{path}}"
+							],
+							"path": [
+								"api",
+								"yelp",
+								"search",
+								"bar"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d6ccf160-3e04-48f6-8d12-e2426001eace",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d93104f4-8d33-478e-a908-805719065ddb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "72d0e293-bed1-445d-8f58-46ba4a315b78",
+			"key": "path",
+			"value": "http://127.0.0.1:8000"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
